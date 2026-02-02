@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>To My Love💖</title>
+
+<style>
+/* =========================
+   GLOBAL STYLES
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    height: 100vh;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+.birthday-card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 25px;
+    padding: 50px;
+    width: 85%;
+    max-width: 800px;
+    text-align: center;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.25);
+    animation: fadeIn 2s ease;
+}
+
+/* =========================
+   HEADINGS
+========================= */
+h1 {
+    font-size: 3.5rem;
+    color: #fff;
+    text-shadow: 0 0 20px rgba(255,255,255,0.8);
+    margin-bottom: 20px;
+    animation: glow 2s infinite alternate;
+}
+
+h2 {
+    color: #fff;
+    font-weight: 300;
+    margin-bottom: 30px;
+}
+
+/* =========================
+   MESSAGE TEXT
+========================= */
+.message {
+    color: #fff;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 40px;
+}
+
+/* =========================
+   BUTTON
+========================= */
+button {
+    background: #ff4d6d;
+    border: none;
+    padding: 15px 35px;
+    border-radius: 50px;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+button:hover {
+    transform: scale(1.1);
+    background: #ff1e4d;
+}
+
+/* =========================
+   HEARTS ANIMATION
+========================= */
+.heart {
+    position: absolute;
+    bottom: -20px;
+    font-size: 20px;
+    animation: floatUp linear infinite;
+    opacity: 0.8;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-110vh) scale(1.5);
+        opacity: 0;
+    }
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #ffb3c6;
+    }
+    to {
+        text-shadow: 0 0 20px #fff, 0 0 40px #ff4d6d;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="birthday-card">
+    <h1>🎉 Happy Birthday, Love! 🎉</h1>
+    <h2>To Someone Truly Special 💕</h2>
+
+    <div class="message">
+        This day means so much to me—  
+        it’s the day that the world became brighter, warmer, and more beautiful  
+        because you were born. The day that a wonderful person like you was brought in this world to live your purpose.🌟  
+        <br><br>
+        Ikaw yung nagdala ng comfort, happiness, contentment, at inspiration sakin just by simply existing.  
+        That is why this day is very important to me. 
+        On your birthday, I hope you appreciate your worth  
+        in every angle of your 19 years of existence. You're not just living, you have a purpose and you matter the most to me.💖  
+        <br><br>
+        I wish you a year full of happiness and laughter.  
+        May you always have a smile on your face because you have a really pretty smile.   
+        Never doubt yourself or question your worth.  
+        Because your presence completes all the flaws and holes of my life.🎂✨
+    </div>
+
+    <button onclick="showSurprise()">Click for a Surprise 🎁</button>
+</div>
+
+<script>
+/* =========================
+   HEART GENERATOR
+========================= */
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "💖";
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
+    heart.style.fontSize = (Math.random() * 20 + 15) + "px";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 6000);
+}
+
+setInterval(createHeart, 300);
+
+/* =========================
+   SURPRISE MESSAGE
+========================= */
+function showSurprise() {
+    alert(
+        "🎉 Surprise! 🎉\n\n" +
+        "Happiest birthday, my babyyy! Always remember that you are loved and valued. I am grateful that you existed:3 " +
+        "Enjoy every bit of this day and savor your special moment. " +
+        "I will stay by your side through every second of this celebration. You'll always be my favorite person. I love you 💖"
+    );
+}
+</script>
+
+</body>
+</html>
